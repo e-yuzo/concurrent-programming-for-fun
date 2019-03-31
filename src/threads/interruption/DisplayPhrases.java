@@ -3,19 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package threads.introduction;
+package threads.interruption;
 
 /**
  *
  * @author yuzo
- * Description: Hello World!
  */
-
-public class HelloWorld {
+public class DisplayPhrases {
     
     public static void main(String[] args) {
-        new Thread(() -> {
-            System.out.println("Hello from a thread!");
-        }).start();
+        new Thread(new ThreadReader()).start();
     }
+    
 }

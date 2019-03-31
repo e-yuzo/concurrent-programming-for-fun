@@ -7,8 +7,8 @@ package threads.introduction;
 
 /**
  *
- * @author a1354698
- * Description: thread safety.
+ * @author yuzo
+ * Description: thread safety wrongly implemented.
  */
 
 public class ThreadSafety {
@@ -23,7 +23,7 @@ public class ThreadSafety {
 
 class SharedObject implements Runnable {
 
-    Counter counter;
+    private final Counter counter;
 
     public SharedObject(Counter counter) {
         this.counter = counter;

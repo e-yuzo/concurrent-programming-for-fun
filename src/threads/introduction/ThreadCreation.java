@@ -11,8 +11,8 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author a1354698
- * Description: given INT X, run X threads.
+ * @author yuzo
+ * Description: given number X, run X threads.
  */
 
 public class ThreadCreation implements Runnable{
