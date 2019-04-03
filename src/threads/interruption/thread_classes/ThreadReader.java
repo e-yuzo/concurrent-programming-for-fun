@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package threads.interruption;
+
+package threads.interruption.thread_classes;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -14,8 +10,6 @@ import java.util.logging.Logger;
 /**
  *
  * @author yuzo
- * Description: read and display content stored in file quote.txt (10 seconds 
- * interval).
  */
 public class ThreadReader implements Runnable {
 
@@ -38,10 +32,8 @@ public class ThreadReader implements Runnable {
             try {
                 Thread.sleep(10000);
             } catch (InterruptedException ex) {
-                Logger.getLogger(ThreadReader.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            if (Thread.interrupted()) {
-                System.out.println("ThreadReader interrupted.");
+                System.out.println("someone interruped me");
+                break;
             }
         }
     }

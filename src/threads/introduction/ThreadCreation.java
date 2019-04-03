@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package threads.introduction;
 
 import java.util.Scanner;
@@ -12,9 +8,9 @@ import java.util.logging.Logger;
 /**
  *
  * @author yuzo
- * Description: given number X, run X threads.
+ * Description: faça um programa que receba um valor indicando um número de 
+ * threads a serem instanciadas e teste os dois modos de criar threads em Java.
  */
-
 public class ThreadCreation implements Runnable{
     
     public static void main(String[] args) {

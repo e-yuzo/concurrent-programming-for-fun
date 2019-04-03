@@ -1,34 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package threads.interruption;
 
-import java.util.List;
+import threads.interruption.thread_classes.ThreadSleeper;
 
 /**
  *
  * @author yuzo
+ * Description: faça um programa em Java que inicie três threads e, cada thread,
+ * espere um tempo aleatório para terminar.
  */
 public class RandomSleep {
     
     public static void main(String[] args) {
-        Thread firstThread = new Thread(new ThreadSleeper());
-        Thread secondThread = new Thread(new ThreadSleeper());
-        Thread thirdThread = new Thread(new ThreadSleeper());
-        List<Thread> threadList = null;
-        threadList.add(firstThread);
-        threadList.add(secondThread);
-        threadList.add(thirdThread);
+        //thread sleeper creation
+        Thread threadSleeper_1 = new Thread(new ThreadSleeper());
+        Thread threadSleeper_2 = new Thread(new ThreadSleeper());
+        Thread threadSleeper_3 = new Thread(new ThreadSleeper());
         
-        new Thread(new ThreadInterrupter(threadList)).start();
-        firstThread.start();
-        secondThread.start();
-        thirdThread.start();
-        
-        
-
+        //start threads
+        threadSleeper_1.start();
+        threadSleeper_2.start();
+        threadSleeper_3.start();
     }
-    
 }

@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package threads.interruption;
+
+package threads.interruption.thread_classes;
 
 import java.util.List;
 import java.util.logging.Level;
@@ -11,11 +7,11 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author yuzo Description: watch thread state in a 5 second interval.
+ * @author yuzo
  */
 public class ThreadWatcher implements Runnable {
 
-    private final List<Thread> threadList; // = new ArrayList<String>();
+    private final List<Thread> threadList;
 
     public ThreadWatcher(List<Thread> threadList) {
         this.threadList = threadList;
@@ -28,7 +24,7 @@ public class ThreadWatcher implements Runnable {
                 showThreadStatus(thread);
             });
             try {
-                Thread.sleep(5000);
+                Thread.sleep(1000);
             } catch (InterruptedException ex) {
                 Logger.getLogger(ThreadInterrupter.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -36,6 +32,6 @@ public class ThreadWatcher implements Runnable {
     }
 
     static void showThreadStatus(Thread thread) {
-        System.out.println(thread.getName() + " State: " + thread.getState());
+        System.out.println("Name: " + thread.getName() + " State: " + thread.getState() + " Interrupted: " + thread.isInterrupted());
     }
 }

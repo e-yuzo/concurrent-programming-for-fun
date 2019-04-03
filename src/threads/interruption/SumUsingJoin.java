@@ -1,35 +1,27 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package threads.interruption;
 
-import java.util.Scanner;
+import threads.interruption.thread_classes.ThreadReadInput;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author yuzo
- * Description: a + b = answer.
+ * Description: faça uma thread Java que fica aguardando uma sequência numérica
+ * de tamanho arbitrário digitado por usuário para realizar uma soma. Use o join().
  */
-public class SumUsingJoin implements Runnable{
+public class SumUsingJoin {
     
-    private int a;
-    private int b;
-    
-    @Override
-    public void run() {
-        Scanner scan = new Scanner(System.in);
-        this.a = scan.nextInt();
-        scan = new Scanner(System.in);
-        this.b = scan.nextInt();
-    }
-
-    public int getA() {
-        return a;
-    }
-
-    public int getB() {
-        return b;
+    public static void main(String[] args) {
+        ThreadReadInput readInput = new ThreadReadInput();
+        Thread thread = new Thread(readInput);
+        thread.start();
+        try {
+            thread.join();
+        } catch (InterruptedException ex) {
+            Logger.getLogger(SumUsingJoin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.out.println(readInput.getA() + readInput.getB());
     }
 }
