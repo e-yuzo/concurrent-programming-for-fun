@@ -8,13 +8,13 @@ Organização dos exercícios realizados na disciplina de Programação Concorre
 ## Exercises
 Os exercícios da *Atividade 1* estão organizados na seguinte tabela. Cada *File* listado na tabela contém a função principal ```main```. A pasta *thread_classes*, quando existir, contém as classes das ```Threads```.
 
-| Exercise | File |
-| ------ | ------ |
-| 1 | [RandomSleep.java][PlDb] |
-| 2 | [DisplayPhrases.java][PlGh] |
-| 3 | [InterruptionSender.java][PlGd] |
-| 4 | [WatchThreadState.java][PlGa] |
-| 5 | [SumUsingJoin.java][PlGg] |
+| Exercise | File | Initialized Classes |
+| ------ | ------ | ------ |
+| 1 | [RandomSleep.java][PlDb] | |
+| 2 | [DisplayPhrases.java][PlGh] | |
+| 3 | [InterruptionSender.java][PlGd] | |
+| 4 | [WatchThreadState.java][PlGa] | |
+| 5 | [SumUsingJoin.java][PlGg] | |
 
 [PlDb]: <https://github.com/tabsnospaces/concurrent-programming-for-fun/tree/master/src/threads/interruption/RandomSleep.java>
 [PlGh]: <https://github.com/tabsnospaces/concurrent-programming-for-fun/tree/master/src/threads/interruption/DisplayPhrases.java>

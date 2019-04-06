@@ -10,7 +10,7 @@ import threads.state.thread_classes.ThreadMergeSort;
 /**
  *
  * @author yuzo
- * Description: Faça um programa multithreaded em Java que ordene um vetor usando
+ * Description: faça um programa multithreaded em Java que ordene um vetor usando
  * o Merge Sort recursivo. Faça com que a thread principal dispare duas threads
  * para classificar cada metade do vetor.
  */

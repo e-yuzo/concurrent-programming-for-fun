@@ -19,11 +19,12 @@ public class ThreadDoesNothing implements Runnable {
         
         //System.out.println(tg.getName());
         while (true) {
-            System.out.println("we just wait forever");
+            System.out.println("we just wait forever, y'know");
             try {
                 Thread.sleep(10000);
             } catch (InterruptedException ex) {
-                Logger.getLogger(ThreadDoesNothing.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("wow :/");
+                break;
             }
         }
     }
