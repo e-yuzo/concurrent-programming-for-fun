@@ -9,7 +9,8 @@ import threads.state.thread_classes.ThreadDoesNothing;
 
 /**
  *
- * @author yuzo Description: faça um programa em Java para testar um conjunto de
+ * @author yuzo
+ * Description: faça um programa em Java para testar um conjunto de
  * operações sobre um grupo de threads. Use o ThreadGroup.
  */
 public class GroupThreadOperations {
