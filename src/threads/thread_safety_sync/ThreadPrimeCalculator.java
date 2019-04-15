@@ -1,3 +1,4 @@
+
 package threads.thread_safety_sync;
 
 import java.util.ArrayList;
