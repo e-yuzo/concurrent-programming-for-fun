@@ -14,7 +14,7 @@ As atividades estão organizadas na seguinte tabela. Cada *Folder* contém seu p
 | 2 | [concurrent-programming-for-fun/src/threads/interruption/][PlGh] |
 | 3 | [concurrent-programming-for-fun/src/threads/state/][PlGd] |
 | 4 | [concurrent-programming-for-fun/src/threads/thread_safety_sync/][PlGs] |
-| 5 | [concurrent-programming-for-fun/src/threads/thread_safety_sync/][PlGw] |
+| 5 | [concurrent-programming-for-fun/src/threads/producer_consumer/][PlGw] |
 
 [PlDb]: <https://github.com/tabsnospaces/concurrent-programming-for-fun/tree/master/src/threads/introduction>
 [PlGh]: <https://github.com/tabsnospaces/concurrent-programming-for-fun/tree/master/src/threads/interruption>
