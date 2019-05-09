@@ -15,9 +15,13 @@ As atividades estão organizadas na seguinte tabela. Cada *Folder* contém seu p
 | 3 | [concurrent-programming-for-fun/src/threads/state/][PlGd] |
 | 4 | [concurrent-programming-for-fun/src/threads/thread_safety_sync/][PlGs] |
 | 5 | [concurrent-programming-for-fun/src/threads/producer_consumer/][PlGw] |
+| 6 | [concurrent-programming-for-fun/src/threads/monitor/][PlGm] |
+| 7 | [concurrent-programming-for-fun/src/threads/semaphore/][PlGs] |
 
 [PlDb]: <https://github.com/tabsnospaces/concurrent-programming-for-fun/tree/master/src/threads/introduction>
 [PlGh]: <https://github.com/tabsnospaces/concurrent-programming-for-fun/tree/master/src/threads/interruption>
 [PlGd]: <https://github.com/tabsnospaces/concurrent-programming-for-fun/tree/master/src/threads/state>
 [PlGs]: <https://github.com/tabsnospaces/concurrent-programming-for-fun/tree/master/src/threads/thread_safety_sync>
 [PlGw]: <https://github.com/tabsnospaces/concurrent-programming-for-fun/tree/master/src/threads/producer_consumer>
+[PlGm]: <https://github.com/tabsnospaces/concurrent-programming-for-fun/tree/master/src/threads/monitor>
+[PlGs]: <https://github.com/tabsnospaces/concurrent-programming-for-fun/tree/master/src/threads/semaphore>
