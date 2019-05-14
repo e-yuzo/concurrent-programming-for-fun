@@ -17,11 +17,11 @@ public class GroupThreadOperations {
 
     public static void main(String[] args) {
         ThreadGroup group = new ThreadGroup("Addiction");
-
+        
         Thread thread_1 = new Thread(group, new ThreadDoesNothing());
         thread_1.setName("run");
         thread_1.start();
-
+        
         Thread thread_2 = new Thread(group, new ThreadDoesNothing());
         thread_2.setName("sky");
         thread_2.start();
@@ -38,6 +38,7 @@ public class GroupThreadOperations {
         for (int i = 0; i < group.activeCount(); i++) {
             System.out.println(threadList[i] + " isDaemon: " + threadList[i].isDaemon());
         }
+        
         group.interrupt();
         group.destroy();
     }
