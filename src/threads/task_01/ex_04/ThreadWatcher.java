@@ -1,5 +1,4 @@
-
-package threads.interruption.thread_classes;
+package threads.task_01.ex_04;
 
 import java.util.List;
 import java.util.logging.Level;

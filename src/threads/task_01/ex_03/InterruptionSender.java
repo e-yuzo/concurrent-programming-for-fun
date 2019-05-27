@@ -1,11 +1,7 @@
+package threads.task_01.ex_03;
 
-package threads.interruption;
-
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
-import threads.interruption.thread_classes.ThreadInterrupter;
-import threads.interruption.thread_classes.ThreadReader;
-import threads.interruption.thread_classes.ThreadSleeper;
 
 /**
  *
@@ -14,7 +10,6 @@ import threads.interruption.thread_classes.ThreadSleeper;
  * exercı́cios anteriores. As threads devem fazer o tratamento dessas interrupções
  * e realizar uma finalização limpa.
  */
-
 public class InterruptionSender {
     
     public static void main(String[] args) {
@@ -30,7 +25,7 @@ public class InterruptionSender {
         Thread threadReader = new Thread(new ThreadReader());
         threadReader.start();
        
-        List<Thread> threadList = new Vector<Thread>();
+        List<Thread> threadList = new ArrayList<>();
         
         //add all threads created
         threadList.add(threadSleeper_1);

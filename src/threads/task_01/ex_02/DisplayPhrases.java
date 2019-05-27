@@ -1,7 +1,4 @@
-
-package threads.interruption;
-
-import threads.interruption.thread_classes.ThreadReader;
+package threads.task_01.ex_02;
 
 /**
  *

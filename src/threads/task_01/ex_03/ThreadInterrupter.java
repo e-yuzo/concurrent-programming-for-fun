@@ -1,8 +1,6 @@
-package threads.interruption.thread_classes;
+package threads.task_01.ex_03;
 
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *

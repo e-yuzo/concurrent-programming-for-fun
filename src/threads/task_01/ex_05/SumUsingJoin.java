@@ -1,7 +1,5 @@
+package threads.task_01.ex_05;
 
-package threads.interruption;
-
-import threads.interruption.thread_classes.ThreadReadInput;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 

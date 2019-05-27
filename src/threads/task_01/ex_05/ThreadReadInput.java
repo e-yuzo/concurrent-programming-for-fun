@@ -1,5 +1,4 @@
-
-package threads.interruption.thread_classes;
+package threads.task_01.ex_05;
 
 import java.util.Scanner;
 
