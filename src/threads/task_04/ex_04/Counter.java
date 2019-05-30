@@ -15,7 +15,7 @@ public class Counter {
         this.s = s;
     }
     
-    public synchronized void increment() throws InterruptedException {
+    public void increment() throws InterruptedException {
         s.acquire();
         System.out.println(++i);
         s.release();

@@ -15,7 +15,7 @@ public class Queue {
     int queue1 = 0;
     int queue2 = 0;
 
-    public synchronized void F1() throws Exception {
+    public void F1() throws Exception {
         mutex.acquire();
         if (queue2 > 0) { // there is a thread in queue2
             queue2--;
@@ -30,7 +30,7 @@ public class Queue {
         mutex.release(); //alguém precisa fazer o release
     }
 
-    public synchronized void F2() throws Exception {
+    public void F2() throws Exception {
         mutex.acquire();
         if (queue1 > 0) {
             queue1--;
