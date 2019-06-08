@@ -8,4 +8,4 @@ Organização dos exercícios realizados na disciplina de Programação Concorre
 ## Exercises
 As atividades estão organizadas na pasta [concurrent-programming-for-fun/src/threads/introduction/][PlDb].
 
-[PlDb]: <https://github.com/tabsnospaces/concurrent-programming-for-fun/src/threads/>
+[PlDb]: <https://github.com/tabsnospaces/tabsnospaces/concurrent-programming-for-fun/src/threads/>
