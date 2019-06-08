@@ -26,7 +26,7 @@ public class ThreadReader implements Runnable {
     public void run() {
         while (true) {
             String fileData;
-            fileData = readFile("/home/yuzo/NetBeansProjects/ConcurrentProgramming/src/threads/task_01/quotes.txt");
+            fileData = readFile("/home/yuzo/NetBeansProjects/ConcurrentProgramming/src/threads/task_01/ex_02/quotes.txt");
             System.out.println(fileData);
             try {
                 Thread.sleep(10000);
