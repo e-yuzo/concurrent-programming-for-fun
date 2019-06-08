@@ -3,12 +3,13 @@ package threads.task_05.ex_01;
 import java.util.concurrent.Semaphore;
 
 // prioritize readers
-class ReaderWriterV1 {
+class ReaderWriterV1 implements ReadWriter{
 
     int numReaders = 0;
     Semaphore mutex = new Semaphore(1);
     Semaphore wlock = new Semaphore(1); // for everyone
 
+    @Override
     public void startRead() throws InterruptedException {
         mutex.acquire();
         numReaders++;
@@ -19,6 +20,7 @@ class ReaderWriterV1 {
         System.out.println("Reading.");
     }
 
+    @Override
     public void endRead() throws InterruptedException {
         System.out.println("Finished reading.");
         mutex.acquire();
@@ -29,12 +31,14 @@ class ReaderWriterV1 {
         mutex.release();
     }
 
+    @Override
     public void startWrite() throws InterruptedException {
         wlock.acquire();
         System.out.println("Writing");
     }
 
-    public void endWrite() {
+    @Override
+    public void endWrite() throws InterruptedException{
         wlock.release();
         System.out.println("Finished writing.");
     }

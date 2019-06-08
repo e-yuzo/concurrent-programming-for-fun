@@ -6,7 +6,7 @@ package threads.task_02.ex_02;
  * Description: faça um programa em Java para testar um conjunto de
  * operações sobre um grupo de threads. Use o ThreadGroup.
  */
-public class GroupThreadOperations {
+public class Main {
 
     public static void main(String[] args) {
         ThreadGroup group = new ThreadGroup("Addiction");

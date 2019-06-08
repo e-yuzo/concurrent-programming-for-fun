@@ -3,7 +3,7 @@ package threads.task_05.ex_01;
 import java.util.concurrent.Semaphore;
 
 // prioritize writers
-class ReaderWriterV2 {
+class ReaderWriterV2 implements ReadWriter{
 
     int numReaders = 0;
     int numWriters = 0;
@@ -11,16 +11,19 @@ class ReaderWriterV2 {
     Semaphore rlock = new Semaphore(1); // for everyone
     Semaphore wlock = new Semaphore(1); // for everyone
 
+    @Override
     public void startRead() throws InterruptedException {
         rlock.acquire(); // see if this is correct
         System.out.println("Reading.");
     }
 
+    @Override
     public void endRead() throws InterruptedException {
         rlock.release();
         System.out.println("Finished reading.");
     }
 
+    @Override
     public void startWrite() throws InterruptedException {
         mutex.acquire(); // stop here
         numWriters++;
@@ -32,6 +35,7 @@ class ReaderWriterV2 {
         System.out.println("Writing.");
     }
 
+    @Override
     public void endWrite() throws InterruptedException {
         wlock.release();
         System.out.println("Finished writing.");

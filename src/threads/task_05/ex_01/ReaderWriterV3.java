@@ -3,13 +3,14 @@ package threads.task_05.ex_01;
 import java.util.concurrent.Semaphore;
 
 // no starvation
-class ReaderWriterV3 {
+class ReaderWriterV3 implements ReadWriter {
 
     int numReaders = 0;
     int numWriters = 0;
     Semaphore mutex = new Semaphore(1);
     Semaphore resource = new Semaphore(1); // for everyone
 
+    @Override
     public void startRead() throws InterruptedException {
         mutex.acquire();
         // if writers are trying to access the resource, we need to secure resource again
@@ -23,6 +24,7 @@ class ReaderWriterV3 {
         System.out.println("Reading.");
     }
 
+    @Override
     public void endRead() throws InterruptedException {
         mutex.acquire();
         numReaders--;
@@ -33,6 +35,7 @@ class ReaderWriterV3 {
         System.out.println("Finished reading.");
     }
 
+    @Override
     public void startWrite() throws InterruptedException {
         mutex.acquire(); // stop here
         numWriters++;
@@ -42,6 +45,7 @@ class ReaderWriterV3 {
         System.out.println("Writing.");
     }
 
+    @Override
     public void endWrite() throws InterruptedException {
         mutex.acquire();
         numWriters--;

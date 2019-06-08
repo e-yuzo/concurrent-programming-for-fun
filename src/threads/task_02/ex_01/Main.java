@@ -6,7 +6,7 @@ package threads.task_02.ex_01;
  * Description: faça um programa em Java que consulte periodicamente o estado de
  * um conjunto de threads.
  */
-public class StateMonitor {
+public class Main {
     public static void main(String[] args) {
         
         //group creation

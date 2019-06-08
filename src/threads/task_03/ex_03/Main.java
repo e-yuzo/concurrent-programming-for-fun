@@ -5,6 +5,9 @@ import java.util.concurrent.ThreadLocalRandom;
 /**
  *
  * @author yuzo
+ * Description: Escreva um monitor BoundedCounter que possui um valor mı́nimo e
+ * máximo. A classe possui dois métodos: increment() e decrement(). Ao alcançar
+ * os limites mínimo ou máximo, a thread que alcançou deve ser bloqueada.
  */
 public class Main {
 

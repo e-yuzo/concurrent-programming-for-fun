@@ -5,8 +5,13 @@ import java.util.concurrent.Semaphore;
 /**
  *
  * @author yuzo
+ * Description: Após n threads sincronizarem em um ponto em comum, um trecho
+ * específico (ponto crítico) pode ser executado por cada uma delas. Faça um
+ * código que possibilite barrar N threads em um ponto específico de execução e,
+ * após todas alcançarem o ponto, todas devem executar o trecho de código após
+ * esse ponto.
  */
-public class Barrier {
+public class Main {
 
     private static final Semaphore MUTEX = new Semaphore(1);
     private static final Semaphore LOCK1 = new Semaphore(0);

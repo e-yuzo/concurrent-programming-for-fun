@@ -1,13 +1,13 @@
 package threads.task_05.ex_02;
 
 /**
- * Philosopher with id 5 takes the right fork first
+ * Philosopher picks both or none
  *
  * @author yuzo
  */
 import java.util.concurrent.Semaphore;
 
-public class DiningPhilosophersV2 implements Resource {
+public class DiningPhilosophersV2 implements Thinker {
 
     int n = 0;
     Semaphore[] fork = null;
@@ -22,12 +22,14 @@ public class DiningPhilosophersV2 implements Resource {
 
     @Override
     public void pickup(int i) throws Exception {
-        if (i == n - 1) {
-            fork[(i + 1) % n].acquire();
+        boolean both = false;
+        while (!both) {
             fork[i].acquire();
-        } else {
-            fork[i].acquire();
-            fork[(i + 1) % n].acquire();
+            if (!fork[(i + 1) % n].tryAcquire()) {
+                fork[i].release();
+            } else {
+                both = true;
+            }
         }
     }
 
@@ -35,12 +37,5 @@ public class DiningPhilosophersV2 implements Resource {
     public void drop(int i) throws Exception {
         fork[i].release();
         fork[(i + 1) % n].release();
-    }
-
-    public static void main(String[] args) {
-        DiningPhilosophersV2 philosopher = new DiningPhilosophersV2(5);
-        for (int i = 0; i < 5; i++) {
-            new Thread(new Philosopher(i, philosopher)).start();
-        }
     }
 }

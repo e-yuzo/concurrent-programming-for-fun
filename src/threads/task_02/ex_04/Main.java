@@ -10,7 +10,7 @@ import java.util.List;
  * vetor de inteiros. Informe para o método: valor procurado, vetor de inteiros
  * e o número de threads.
  */
-public class SearchVector {
+public class Main {
     
     public static void main(String[] args) {
         List<Integer> list = new ArrayList<>();

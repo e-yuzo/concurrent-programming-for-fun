@@ -5,8 +5,11 @@ import java.util.concurrent.Semaphore;
 /**
  *
  * @author yuzo
+ * Description: Threds em um laço executam uma série de passos e sincronizam em
+ * uma barreira a cada passo. Faça um código que implemente uma barreira
+ * reusável que feche a si própria após todas as threads passarem.
  */
-public class Barrier {
+public class Main {
 
     private static final Semaphore MUTEX = new Semaphore(1);
     private static final Semaphore LOCK1 = new Semaphore(0);

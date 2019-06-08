@@ -6,7 +6,7 @@ package threads.task_03.ex_01;
  * Description: Implemente uma solução com monitor para o problema do
  * produtor-consumidor usando um buffer circular.
  */
-public class ProducerConsumer {
+public class Main {
     
     public static void main(String[] args) {
         NewsPool newsPool = new NewsPool();

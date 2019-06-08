@@ -5,9 +5,11 @@ import java.util.concurrent.Semaphore;
 /**
  *
  * @author yuzo
- * Release is necessary: permits turns 1, so that t2 can acquire.
+ * Enviar sinal para outra thread para indicar que um evento ocorreu. Faça um
+ * código que uma thread t1 e t2 são inicializadas simultaneamente, mas a t2
+ * pode somente continuar a execução após a sinalização de t1.
  */
-public class Signaling {
+public class Main {
     
     public static void main(String[] args) {
         Semaphore s = new Semaphore(0);

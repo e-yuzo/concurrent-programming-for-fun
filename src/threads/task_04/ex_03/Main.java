@@ -5,8 +5,11 @@ import java.util.concurrent.Semaphore;
 /**
  *
  * @author yuzo
+ * Description: Garantir acesso exclusivo à seção crítica. Faça um código que
+ * possibilite que 2 ou mais threads realizem o incremento de um contador. Faça
+ * a exclusão mútua com semáforo.
  */
-public class Mutex {
+public class Main {
     
     public static void main(String[] args) {
         Semaphore s = new Semaphore(1); //quantidade de threads acessando o mesmo recurso ????

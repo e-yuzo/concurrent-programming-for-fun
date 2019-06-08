@@ -1,6 +1,7 @@
 1. task_03.ex_04:
     Implemente uma solução para o problema do Barbeiro
     Dorminhoco usando monitores.
-2. all task_05
 
-2. Correção dos exercícios de Mutex e Multiplex.
+2. task_06.*
+
+3. dining philosopher task_05

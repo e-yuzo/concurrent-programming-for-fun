@@ -7,9 +7,9 @@ import java.util.logging.Logger;
 class Philosopher implements Runnable {
     
     int id = 0;
-    Resource fork = null;
+    Thinker fork = null;
     
-    public Philosopher(int initId, Resource initr) {
+    public Philosopher(int initId, Thinker initr) {
         id = initId;
         fork = initr;
     }

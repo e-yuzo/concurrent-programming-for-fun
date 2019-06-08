@@ -5,8 +5,11 @@ import java.util.concurrent.Semaphore;
 /**
  *
  * @author yuzo
+ * Description: Garantir acesso à seção crítica para no máximo N threads. Faça
+ * um código que possibilite que N threads estejam na seção crítica
+ * simultaneamente.
  */
-public class Multiplex {
+public class Main {
     
     public static void main(String[] args) {
         Semaphore s = new Semaphore(3); //three threads can access
