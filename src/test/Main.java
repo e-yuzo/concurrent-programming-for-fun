@@ -70,7 +70,8 @@ public class Main {
         int m1[][] = { { 1, 2, 3, 4 }, 
                         { 5, 6, 7, 8 }, 
                         { 9, 10, 11, 12 } };
-        System.out.println(m1[0].length);
+        System.out.println(System.getProperty("user.dir"));
+        
     }
 
     static void showThreadStatus(Thread thrd) {

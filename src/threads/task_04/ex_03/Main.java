@@ -12,7 +12,7 @@ import java.util.concurrent.Semaphore;
 public class Main {
     
     public static void main(String[] args) {
-        Semaphore s = new Semaphore(1); //quantidade de threads acessando o mesmo recurso ????
+        Semaphore s = new Semaphore(1);
         Counter c = new Counter(s);
         
         Thread t1 = new Thread(new Increment(c));

@@ -6,24 +6,21 @@
 package threads.task_08.ex_02;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.concurrent.Callable;
+import java.util.concurrent.CompletionService;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorCompletionService;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
-import sun.rmi.server.UnicastServerRef;
 
 /**
  *
- * @author a1354698 Fa ̧ca um programa que localize o maior valor em um vetor.
- * Divida oprograma em tarefas que localizam o maior valor em um segmento
- * dovetor. O programa deve possibilitar especificar o n ́umero de tarefas e on
- * ́umero de threads para resolver o problema.
+ * @author a1354698
+ * Description: Fa¸ca um programa que calcule a soma dos elementos de uma matriz
+ * MxN. Divida o programa em tarefas que somam as linhas. O programa deve
+ * possibilitar especificar o n´umero de threads para resolver o problema.
  */
 public class Main {
 
@@ -39,18 +36,36 @@ public class Main {
         int THREADS = 5;
 
         ExecutorService executor = Executors.newFixedThreadPool(THREADS);
-        ExecutorService es = Executors.newSingleThreadExecutor();
-        Set<Callable<int[]>> callables = new HashSet<>();
+//        ExecutorService es = Executors.newSingleThreadExecutor();
+        CompletionService<int[]> completionService = new ExecutorCompletionService<>(executor);
+//        Set<Callable<int[]>> callables = new HashSet<>();
+        List<Future<int[]>> futures = new ArrayList<>();
         int[][] matrixResult = new int[m1.length][m1[0].length];
         for (int i = 0; i < m1.length; i++) {
             int[] mm1 = m1[i];
             int[] mm2 = m2[i];
             Sum s = new Sum(mm1, mm2);
-            callables.add(s);
-
-        System.out.println(Arrays.toString(matrixResult));
-
+            Future<int[]> future = executor.submit(s);
+            futures.add(future);
+//            callables.add(s);
+        }
+        
+        int i = 0;
         executor.shutdown();
+//        executor.invokeAll(callables);
+        for (Future<int[]> f : futures) {
+            try {
+                matrixResult[i] = f.get();
+                i++;
+            } catch (InterruptedException | ExecutionException ex) {
+            }
+        }
+        for (int[] matrixResult1 : matrixResult) {
+            for (int k = 0; k < matrixResult[0].length; k++) {
+                System.out.print(matrixResult1[k] + " ");
+            }
+            System.out.println();
+        } 
     }
 }
 
@@ -69,8 +84,8 @@ class Sum implements Callable<int[]> {
         int[] r = new int[m1.length];
         for (int i = 0; i < m1.length; i++) {
             r[i] = m1[i] + m2[i];
+            System.out.println(r[i]);
         }
         return r;
     }
-
 }

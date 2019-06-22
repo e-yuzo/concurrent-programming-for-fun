@@ -20,10 +20,10 @@ import java.util.concurrent.Future;
 /**
  *
  * @author a1354698
- * Fa ̧ca um programa que localize o maior valor em um vetor.  Divida oprograma
- * em tarefas que localizam o maior valor em um segmento dovetor.  O programa
- * deve possibilitar especificar o n ́umero de tarefas e on ́umero de threads
- * para resolver o problema.
+ * Description: Fa ̧ca um programa que localize o maior valor em um vetor.
+ * Divida o programa em tarefas que localizam o maior valor em um segmento do
+ * vetor. O programadeve possibilitar especificar o n ́umero de tarefas e o
+ * ńumero de threads para resolver o problema.
  */
 public class Main {
     
