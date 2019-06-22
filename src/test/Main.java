@@ -48,25 +48,29 @@ class MyThread extends Thread {
 public class Main {
 
     public static void main(String args[]) throws Exception {
-        MyThread thrd = new MyThread();
-        thrd.setName("MyThread #1");
-        showThreadStatus(thrd);
-
-        thrd.start();
-        Thread.sleep(50);
-        showThreadStatus(thrd);
-
-        thrd.waiting = false;
-        Thread.sleep(50);
-        showThreadStatus(thrd);
-
-        thrd.notice();
-        Thread.sleep(50);
-        showThreadStatus(thrd);
-        while (thrd.isAlive()) {
-            System.out.println("alive");
-        }
-        showThreadStatus(thrd);
+//        MyThread thrd = new MyThread();
+//        thrd.setName("MyThread #1");
+//        showThreadStatus(thrd);
+//
+//        thrd.start();
+//        Thread.sleep(50);
+//        showThreadStatus(thrd);
+//
+//        thrd.waiting = false;
+//        Thread.sleep(50);
+//        showThreadStatus(thrd);
+//
+//        thrd.notice();
+//        Thread.sleep(50);
+//        showThreadStatus(thrd);
+//        while (thrd.isAlive()) {
+//            System.out.println("alive");
+//        }
+//        showThreadStatus(thrd);
+        int m1[][] = { { 1, 2, 3, 4 }, 
+                        { 5, 6, 7, 8 }, 
+                        { 9, 10, 11, 12 } };
+        System.out.println(m1[0].length);
     }
 
     static void showThreadStatus(Thread thrd) {

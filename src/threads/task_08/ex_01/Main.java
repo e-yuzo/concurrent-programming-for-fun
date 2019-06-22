@@ -26,6 +26,7 @@ import java.util.concurrent.Future;
  * para resolver o problema.
  */
 public class Main {
+    
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         List<Integer> integerList = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5,
                 6, 7, 8, 9, 10));
@@ -33,11 +34,9 @@ public class Main {
         int THREADS = 2;
         
         ExecutorService es = Executors.newSingleThreadExecutor();
-        Set<Callable<Integer>> callables = new HashSet<Callable<Integer>>();
+        Set<Callable<Integer>> callables = new HashSet<>();
        
-        
         int indexRange = integerList.size() / TASKS;
-        
         for (int i = 0; i < indexRange; i++ ) {
             int start = i * indexRange;
             int end = start + indexRange;
@@ -45,12 +44,9 @@ public class Main {
                 end = integerList.size();
             }
             List<Integer> subList = integerList.subList(start, end);
-            callables.add(new Callable<Integer>() {
-                @Override
-                public Integer call() throws Exception {
-                    subList.sort(Collections.reverseOrder());
-                    return subList.get(0);
-                }
+            callables.add((Callable<Integer>) () -> {
+                subList.sort(Collections.reverseOrder());
+                return subList.get(0);
             });
         }
         
@@ -62,24 +58,5 @@ public class Main {
         result.sort(Collections.reverseOrder());
         System.out.println("Highest number: " + result.get(0));
         es.shutdown();
-    }
-}
-
-class HighestNumberInVector implements Callable<Integer> {
-
-    List list;
-    
-    public HighestNumberInVector(List list) {
-        this.list = list;
-    }
-
-    @Override
-    public Integer call() throws Exception {
-        
-        for (Object value : list) {
-            int a = (int) value;
-            return a;
-        }
-        return 0;
     }
 }

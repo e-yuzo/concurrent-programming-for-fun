@@ -37,9 +37,9 @@ class ReaderWriterV3 implements ReadWriter {
 
     @Override
     public void startWrite() throws InterruptedException {
-        mutex.acquire(); // stop here
+        mutex.acquire();
         numWriters++;
-        mutex.release(); // let others
+        mutex.release();
         
         resource.acquire();
         System.out.println("Writing.");
