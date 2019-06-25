@@ -33,7 +33,7 @@ public class Main {
         int TASKS = 3;
         int THREADS = 2;
         
-        ExecutorService es = Executors.newSingleThreadExecutor();
+        ExecutorService es = Executors.newFixedThreadPool(THREADS);
         Set<Callable<Integer>> callables = new HashSet<>();
        
         int indexRange = integerList.size() / TASKS;

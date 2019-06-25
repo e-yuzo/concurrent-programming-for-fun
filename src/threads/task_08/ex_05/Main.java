@@ -42,7 +42,6 @@ public class Main {
             public Object call() throws Exception {
                 return TIME;
             }
-
         },
                 delay,
                 TimeUnit.MILLISECONDS);

@@ -40,9 +40,9 @@ public class Main {
 
         Set<Runnable> runnables = new HashSet<>();
         
-        File cells = new File(System.getProperty("user.dir") + "\\src\\threads\\task_08\\ex_04\\cells.txt");
-        File strange = new File(System.getProperty("user.dir") + "\\src\\threads\\task_08\\ex_04\\strange.txt");
-        File water = new File(System.getProperty("user.dir") + "\\src\\threads\\task_08\\ex_04\\water.txt");
+        File cells = new File(System.getProperty("user.dir") + "/src/threads/task_08/ex_04/cells.txt");
+        File strange = new File(System.getProperty("user.dir") + "/src/threads/task_08/ex_04/strange.txt");
+        File water = new File(System.getProperty("user.dir") + "/src/threads/task_08/ex_04/water.txt");
         
         Monitor mCells = new Monitor(cells);
         Monitor mstrange = new Monitor(strange);
@@ -58,7 +58,6 @@ public class Main {
         
         ses.awaitTermination(100, TimeUnit.SECONDS);
     }
-
 }
 
 class Monitor implements Runnable {

@@ -60,6 +60,7 @@ public class Main {
             } catch (InterruptedException | ExecutionException ex) {
             }
         }
+        System.out.println("Resultado da soma das matrizes: ");
         for (int[] matrixResult1 : matrixResult) {
             for (int k = 0; k < matrixResult[0].length; k++) {
                 System.out.print(matrixResult1[k] + " ");
@@ -84,7 +85,7 @@ class Sum implements Callable<int[]> {
         int[] r = new int[m1.length];
         for (int i = 0; i < m1.length; i++) {
             r[i] = m1[i] + m2[i];
-            System.out.println(r[i]);
+//            System.out.println(r[i]);
         }
         return r;
     }

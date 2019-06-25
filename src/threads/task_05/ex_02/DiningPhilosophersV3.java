@@ -1,7 +1,7 @@
 package threads.task_05.ex_02;
 
 /**
- * Philosopher with id 5 takes the right fork first
+ * One philosopher is left out in each round.
  *
  * @author yuzo
  */
