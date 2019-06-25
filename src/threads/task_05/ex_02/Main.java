@@ -16,7 +16,7 @@ public class Main {
         
         int N = 5;
         //change next line to 'V2' or 'V3'
-        Thinker philosopher = new DiningPhilosophersV2(N);
+        Thinker philosopher = new DiningPhilosophersV3(N);
         
         for (int i = 0; i < N; i++) {
             new Thread(new Philosopher(i, philosopher)).start();

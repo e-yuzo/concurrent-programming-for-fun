@@ -17,6 +17,8 @@ import javafx.util.Pair;
  * cartas após os consumidores removerem 3 cartas cada um. As cartas
  * remanescentes podem continuar na estrutura. Use a ordenac~ao do baralho da
  * menor para maior: A, 2, ..., 10, Q, J, K.
+ * ORDEM: IF (SUIT das cartas forem iguais) THEN (comparar o RANK delas).
+ * SUIT tem prioridade ao determinar a ordem.
  */
 public class Main {
 
@@ -24,10 +26,11 @@ public class Main {
         int BOUND = 100;
         int N_PRODUCERS = 2;
         int N_CONSUMERS = 2;
-        BlockingQueue<Pair<String, String>> queue = new PriorityBlockingQueue<>(BOUND, new CardComparator());
+        BlockingQueue<Pair<String, String>> queue = new PriorityBlockingQueue<>
+        (BOUND, new CardComparator());
 
 //      if each position reaches 3, then stop consuming, and wait for producers
-        List<Integer> consumerism = new ArrayList<>(N_CONSUMERS);
+        List<Integer> consumerism = new ArrayList<>(N_CONSUMERS); //this variable isn't being used anymore
         consumerism.add(0);
         consumerism.add(0);
 
@@ -49,16 +52,9 @@ public class Main {
 
 class CardComparator implements Comparator<Pair<String, String>> {
 
-//    Overriding compare()method of Comparator  
-//    for descending order of cgpa 
     @Override
     public int compare(Pair<String, String> card1, Pair<String, String> card2) {
         DeckOfCards doc = new DeckOfCards();
-//        if (s1.cgpa < s2.cgpa) {
-//            return 1;
-//        } else if (s1.cgpa > s2.cgpa) {
-//            return -1;
-//        }
         int r = doc.compare(card1, card2);
         return r;
     }

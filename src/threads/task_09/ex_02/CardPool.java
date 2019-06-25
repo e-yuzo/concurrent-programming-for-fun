@@ -24,7 +24,7 @@ public class CardPool {
     public CardPool(BlockingQueue<Pair<String, String>> queue,
             List<Integer> consumerism) {
         this.queue = queue;
-        this.consumerism = consumerism;
+        this.consumerism = consumerism; //this variable isn't being used
     }
 
     public void put(Pair<String, String> card) throws InterruptedException {
