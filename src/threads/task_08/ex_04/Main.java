@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package threads.task_08.ex_04;
 
 import java.io.File;
@@ -76,7 +72,7 @@ class Monitor implements Runnable {
 
     public void toFileOutputStream(String text) throws IOException {
         try (FileOutputStream outputStream = new FileOutputStream(System.
-                getProperty("user.dir") + "\\src\\threads\\task_08\\ex_04\\logs.txt", true)) {
+                getProperty("user.dir") + "/src/threads/task_08/ex_04/logs.txt", true)) {
             String toAppend = text + "\n";
             byte[] strToBytes = toAppend.getBytes();
             outputStream.write(strToBytes);
