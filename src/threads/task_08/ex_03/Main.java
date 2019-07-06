@@ -33,9 +33,7 @@ public class Main {
         int THREADS = 5;
 
         ExecutorService executor = Executors.newFixedThreadPool(THREADS);
-//        ExecutorService es = Executors.newSingleThreadExecutor();
-//        CompletionService<int[]> completionService = new ExecutorCompletionService<>(executor);
-//        Set<Callable<int[]>> callables = new HashSet<>();
+
         List<Future<Integer>> futures = new ArrayList<>();
         int[][] matrixResult = new int[m1.length][m2[0].length];
         for (int i = 0; i < m1.length; i++) {
@@ -43,26 +41,20 @@ public class Main {
                 Mutiply s = new Mutiply(m1, m2, i, j);
                 Future<Integer> future = executor.submit(s);
                 futures.add(future);
-//            callables.add(s);
+
             }
         }
 
         executor.shutdown();
         int idx = 0;
-//        executor.invokeAll(callables);
+
         for (int i = 0; i < m1.length; i++) {
             for (int j = 0; j < m2[0].length; j++) {
                 matrixResult[i][j] = futures.get(idx).get();
                 idx++;
             }
         }
-//        for (Future<int[]> f : futures) {
-//            try {
-//                matrixResult[i] = f.get();
-//                i++;
-//            } catch (InterruptedException | ExecutionException ex) {
-//            }
-//        }
+
         for (int[] matrixResult1 : matrixResult) {
             for (int k = 0; k < matrixResult[0].length; k++) {
                 System.out.print(matrixResult1[k] + " ");

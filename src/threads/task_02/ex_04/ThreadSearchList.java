@@ -39,9 +39,9 @@ public class ThreadSearchList implements Runnable {
         for (int i = 0; i < this.availableProcessors; i++) {
             new Thread(new ThreadFindNumber(index, index + load.get(i), this.list, this.number)).start();
             index = index + load.get(i);
-            //System.out.println(index);
         }
     }
+    
 }
 
 class ThreadFindNumber implements Runnable {
@@ -66,4 +66,5 @@ class ThreadFindNumber implements Runnable {
             }
         }
     }
+    
 }

@@ -30,11 +30,11 @@ public class Producer implements Runnable {
     }
 
     private void generateNumbers() throws InterruptedException {
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 1000; i++) {
 //            numbersQueue.put(ThreadLocalRandom.current()
 //                .nextInt(100));
             numbersQueue.put(i);
-            Thread.sleep(ThreadLocalRandom.current().nextInt(2000, 3000));
+//            Thread.sleep(ThreadLocalRandom.current().nextInt(2000, 3000));
         }
 //        for (int j = 0; j < poisonPillPerProducer; j++) {
 //            numbersQueue.put(poisonPill);

@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package threads.task_09.ex_02;
 
 import java.util.List;
@@ -17,14 +13,12 @@ import javafx.util.Pair;
 public class CardPool {
 
     private final BlockingQueue<Pair<String, String>> queue;
-    List<Integer> consumerism; // make these variables atomic
     private final AtomicInteger counter = new AtomicInteger();
     int[] consumers = new int[2];
 
     public CardPool(BlockingQueue<Pair<String, String>> queue,
             List<Integer> consumerism) {
         this.queue = queue;
-        this.consumerism = consumerism; //this variable isn't being used
     }
 
     public void put(Pair<String, String> card) throws InterruptedException {
@@ -62,35 +56,18 @@ public class CardPool {
     public synchronized boolean canConsumeMore() {
         return consumers[0] < 3 || consumers[1] < 3;
     }
-//    public synchronized boolean canConsumeMore() {
-//        return consumerism.get(0) < 3 || consumerism.get(1) < 3;
-//    }
-
-//    public synchronized boolean canConsumeMore(int threadId) {
-//        System.out.println(consumerism.toString());
-//        if (consumerism.get(threadId - 1) < 3) {
-//            consumerism.add(threadId - 1, consumerism.get(threadId - 1) + 1);
-//            return true;
-//        }
-//        return false;
-//    }
+    
     public synchronized boolean canConsumeMore(int threadId) {
-//        System.out.println(Arrays.toString(consumers));
         if (consumers[threadId - 1] < 3) {
             consumers[threadId - 1] = consumers[threadId - 1] + 1;
             return true;
         }
         return false;
     }
-
-//    public void resetLife() {
-//        consumerism.add(0, 0);
-//        consumerism.add(1, 0);
-//    }
+    
     public synchronized void resetLife() {
         consumers[0] = 0;
         consumers[1] = 0;
-//        consumerism.add(1, 0);
     }
 
     public void resetCounter() {
@@ -113,13 +90,4 @@ public class CardPool {
         }
     }
 
-//    public Collection<Pair<String, String>> take() throws InterruptedException {
-//        Collection<Pair<String, String>> cards = new ArrayList<>();
-//        if (count >= 10) {
-//            queue.drainTo(cards, 10);
-//            return cards;
-//        } else {
-//            
-//        }
-//    }
 }

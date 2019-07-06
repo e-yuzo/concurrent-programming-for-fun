@@ -15,8 +15,6 @@ public class Main {
 
     private static final Semaphore MUTEX = new Semaphore(1);
     private static final Semaphore LOCK1 = new Semaphore(0);
-    private static final Semaphore LOCK2 = new Semaphore(1);
-
     private static int count = 0;
     private static final int N = 5;
 
@@ -42,7 +40,6 @@ public class Main {
                     count++;
                 }
                 MUTEX.release();
-
                 LOCK1.acquire();
                 LOCK1.release();
                 System.out.println("Thread: " + Thread.currentThread().getName() + " ran past barrier");

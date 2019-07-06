@@ -11,7 +11,6 @@ public class Main {
     
     public static void main(String[] args) {
         int[] list = { 5, 1, 6, 2, 3, 4, 9, 9 };
-        
         new Thread(new ThreadMergeSort(list)).start();
     }
 }

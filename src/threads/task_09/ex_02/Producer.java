@@ -11,11 +11,9 @@ import javafx.util.Pair;
  */
 public class Producer implements Runnable {
 
-    private final BlockingQueue<Pair<String, String>> queue;
     CardPool cp;
 
     public Producer(BlockingQueue<Pair<String, String>> queue, CardPool cp) {
-        this.queue = queue;
         this.cp = cp;
     }
 

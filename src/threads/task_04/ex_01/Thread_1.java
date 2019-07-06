@@ -23,6 +23,6 @@ public class Thread_1 implements Runnable {
             Thread.currentThread().interrupt();
             System.out.println("Interrupted exception: " + e);
         }
-            s.release();
+        s.release();
     }
 }

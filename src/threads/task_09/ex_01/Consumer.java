@@ -19,8 +19,11 @@ public class Consumer implements Runnable {
     @Override
     public void run() {
         try {
-            while (true) {
+            int i = 0;
+            while (i != 1000 - 1) {
+                
                 Integer number = queue.take();
+                i = number;
 //                if (number.equals(poisonPill)) {
 //                    return;
 //                }

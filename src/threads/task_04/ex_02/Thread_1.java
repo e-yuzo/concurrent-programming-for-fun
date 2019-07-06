@@ -18,7 +18,6 @@ public class Thread_1 implements Runnable {
     @Override
     public void run() {
         try {
-            
             System.out.println("Phase 1.1...");
             Thread.sleep(ThreadLocalRandom.current().nextInt(2000, 3000));
 
@@ -29,7 +28,6 @@ public class Thread_1 implements Runnable {
             Thread.sleep(ThreadLocalRandom.current().nextInt(2000, 3000));
             
             s.release();
-            
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             System.out.println("Interrupted exception: " + e);

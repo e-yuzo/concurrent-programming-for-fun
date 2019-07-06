@@ -96,10 +96,6 @@ class BarberShopMonitor {
     Semaphore mutex = new Semaphore(1);
     int customer = 0;
 
-    public BarberShopMonitor() {
-        
-    }
-
     public void cutHair() {
         try {
             System.out.println("Waiting for customers.");

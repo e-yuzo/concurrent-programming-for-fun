@@ -11,14 +11,10 @@ import javafx.util.Pair;
  */
 public class Consumer implements Runnable {
 
-    private final BlockingQueue<Pair<String, String>> queue;
-    List<Integer> consumerism;
     CardPool cp;
 
     public Consumer(BlockingQueue<Pair<String, String>> queue,
             List<Integer> cons, CardPool cp) {
-        this.queue = queue;
-        this.consumerism = cons;
         this.cp = cp;
     }
 
@@ -29,8 +25,8 @@ public class Consumer implements Runnable {
                 Pair<String, String> card = cp.take();
                 String suit = card.getKey();
                 String rank = card.getValue();
-//                System.out.println(Thread.currentThread().getName()
-//                        + " result: " + rank + " of " + suit);
+                System.out.println(Thread.currentThread().getName()
+                        + " result: " + rank + " of " + suit);
             }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
