@@ -6,7 +6,7 @@ package threads.task_01.ex_01;
  * Description: faça um programa em Java que inicie três threads e, cada thread,
  * espere um tempo aleatório para terminar.
  */
-public class RandomSleep {
+public class Main {
     
     public static void main(String[] args) {
         //thread sleeper creation

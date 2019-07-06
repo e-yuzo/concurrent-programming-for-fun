@@ -9,7 +9,7 @@ import java.util.List;
  * Description: faça uma Thread que monitora um conjunto de threads e exiba quais
  * threads receberam sinais de interrupção.
  */
-public class WatchThreadState {
+public class Main {
    
     public static void main(String[] args) {
         Thread threadInterrupted = new Thread(new ThreadInterrupted());

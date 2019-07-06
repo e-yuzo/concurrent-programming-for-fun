@@ -6,11 +6,9 @@ package threads.task_01.ex_04;
  */
 public class ThreadInterrupted implements Runnable{
     
-    private Boolean interrupted = false;
-
     @Override
     public void run() {
-        while (!this.interrupted) {
+        while (true) {
             
         }
     }

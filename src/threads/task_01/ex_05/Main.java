@@ -9,7 +9,7 @@ import java.util.logging.Logger;
  * Description: faça uma thread Java que fica aguardando uma sequência numérica
  * de tamanho arbitrário digitado por usuário para realizar uma soma. Use o join().
  */
-public class SumUsingJoin {
+public class Main {
     
     public static void main(String[] args) {
         ThreadReadInput readInput = new ThreadReadInput();
@@ -18,7 +18,7 @@ public class SumUsingJoin {
         try {
             thread.join();
         } catch (InterruptedException ex) {
-            Logger.getLogger(SumUsingJoin.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
         System.out.println(readInput.getA() + readInput.getB());
     }

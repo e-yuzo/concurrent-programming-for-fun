@@ -17,6 +17,7 @@ public class ThreadInterrupter implements Runnable {
     @Override
     public void run() {
         this.threadList.forEach((Thread thread) -> {
+            System.out.println("Interrupting Thread: " + thread.getName());
             thread.interrupt();
         });
     }

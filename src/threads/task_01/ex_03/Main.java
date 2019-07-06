@@ -10,7 +10,7 @@ import java.util.List;
  * exercı́cios anteriores. As threads devem fazer o tratamento dessas interrupções
  * e realizar uma finalização limpa.
  */
-public class InterruptionSender {
+public class Main {
     
     public static void main(String[] args) {
         //sleeper thread creation
@@ -25,9 +25,8 @@ public class InterruptionSender {
         Thread threadReader = new Thread(new ThreadReader());
         threadReader.start();
        
-        List<Thread> threadList = new ArrayList<>();
-        
         //add all threads created
+        List<Thread> threadList = new ArrayList<>();
         threadList.add(threadSleeper_1);
         threadList.add(threadSleeper_2);
         threadList.add(threadSleeper_3);
