@@ -8,7 +8,7 @@ Organização dos exercícios realizados na disciplina de Programação Concorre
 ## Exercises
 
 - As atividades estão organizadas na pasta [concurrent-programming-for-fun/src/threads/][PlDb].
-- O número das *tasks* estão de acordo com o número das atividades disponíveis na [planilha](https://docs.google.com/spreadsheets/d/1TZNwDbEAURA3H7GrY_L9A1aCJfoV2x3nAnRpOhrSCUU/edit#gid=1477706753).
+- O número das *tasks* (`package threads.task_[00..10].ex_[01..]`) estão de acordo com o número das atividades disponíveis na [planilha](https://docs.google.com/spreadsheets/d/1TZNwDbEAURA3H7GrY_L9A1aCJfoV2x3nAnRpOhrSCUU/edit#gid=1477706753).
 - NetBeansProject.
 
 [PlDb]: <https://github.com/tabsnospaces/concurrent-programming-for-fun/tree/master/src/threads>
