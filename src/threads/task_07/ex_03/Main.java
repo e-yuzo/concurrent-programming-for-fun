@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 /**
  *
  * @author Yuzo Description: One-Dimensional Stencil - implementação CyclicBarrier.
- * Description: Implementação Phaser o professor disse que não precisa fazer hehe.
+ * Description: Implementação Phaser o professor disse que não precisava fazer hehe ºoº
  */
 public class Main {
 
